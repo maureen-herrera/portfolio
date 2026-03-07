@@ -78,14 +78,22 @@ export default function Hero() {
         </p>
 
         <div className="hero-item flex flex-wrap gap-4">
-          <a
-            href="#contact"
-            className="btn-magnetic inline-flex items-center gap-2 bg-[#E63B2E] text-[#F5F3EE] font-semibold px-8 py-4 rounded-full no-underline"
-          >
-            <span className="btn-slide bg-[#111111] rounded-full" />
-            <span className="relative z-10">Get in Touch</span>
-            <ArrowDownRight size={18} className="relative z-10" />
-          </a>
+          <div className="relative inline-flex rounded-full overflow-hidden p-[2px]">
+            <span
+              className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite]"
+              style={{
+                background: 'conic-gradient(from 90deg at 50% 50%, #E63B2E 0%, #F5F3EE 50%, #E63B2E 100%)',
+              }}
+            />
+            <a
+              href="#contact"
+              className="btn-magnetic relative z-10 inline-flex items-center gap-2 bg-[#E63B2E] text-[#F5F3EE] font-semibold px-8 py-4 rounded-full no-underline"
+            >
+              <span className="btn-slide bg-[#111111] rounded-full" />
+              <span className="relative z-10">Get in Touch</span>
+              <ArrowDownRight size={18} className="relative z-10" />
+            </a>
+          </div>
           <a
             href="#experience"
             className="btn-magnetic inline-flex items-center gap-2 bg-[#F5F3EE]/10 backdrop-blur border border-[#F5F3EE]/20 text-[#F5F3EE] font-semibold px-8 py-4 rounded-full no-underline"
