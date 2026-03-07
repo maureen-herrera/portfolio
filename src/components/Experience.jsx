@@ -160,71 +160,59 @@ export default function ExperienceSection() {
                         </div>
 
                         {isMulti ? (
-                          /* ── Multi-role progress tree (LinkedIn style) ── */
-                          <div className="relative pl-5">
-                            {/* Sub-tree vertical connector */}
-                            <div
-                              className="absolute left-[6px] top-3 w-px bg-[#E63B2E]/30"
-                              style={{ bottom: '1.25rem' }}
-                            />
-
-                            <div className="space-y-3">
-                              {job.roles.map((r, ri) => (
-                                <div key={ri} className="relative flex gap-4 group">
-                                  {/* Sub-node */}
-                                  <div className="relative flex-shrink-0 flex items-start pt-1" style={{ width: 13 }}>
-                                    <div
-                                      className={`w-3 h-3 rounded-full border-2 z-10 transition-all duration-300 group-hover:scale-125
-                                        ${r.current
-                                          ? 'bg-[#E63B2E] border-[#E63B2E]'
-                                          : 'bg-[#F5F3EE] border-[#E63B2E]/50'
-                                        }`}
-                                    />
+                          /* ── Multi-role: stacked accent cards, no second line ── */
+                          <div className="space-y-2">
+                            {job.roles.map((r, ri) => (
+                              <div key={ri} className="group relative">
+                                {/* Progress arrow between cards */}
+                                {ri > 0 && (
+                                  <div className="flex items-center gap-2 py-1 px-5">
+                                    <div className="h-px flex-1 bg-[#111111]/10" />
+                                    <span className="font-mono text-[10px] text-[#111111]/30 tracking-widest uppercase">Prior role</span>
+                                    <div className="h-px flex-1 bg-[#111111]/10" />
                                   </div>
-
-                                  {/* Role card */}
-                                  <div
-                                    className={`flex-1 rounded-2xl px-5 py-4 border transition-all duration-300
-                                      group-hover:shadow-md group-hover:-translate-y-0.5
-                                      ${r.current
-                                        ? 'bg-white border-[#E63B2E]/25'
-                                        : 'bg-[#F5F3EE] border-[#111111]/8'
-                                      }`}
-                                  >
-                                    <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
-                                      <div className="flex flex-wrap items-center gap-2">
-                                        <h3 className="font-sans font-bold text-sm text-[#111111]">{r.role}</h3>
-                                        {r.current && (
-                                          <span className="font-mono text-[10px] bg-[#E63B2E] text-[#F5F3EE] px-2 py-0.5 rounded-full leading-none">
-                                            Current
-                                          </span>
-                                        )}
-                                        {ri === 0 && !r.current && (
-                                          <span className="font-mono text-[10px] bg-[#E8E4DD] text-[#111111]/50 px-2 py-0.5 rounded-full leading-none">
-                                            Promoted
-                                          </span>
-                                        )}
-                                      </div>
-                                      <span className="font-mono text-xs text-[#111111]/40 whitespace-nowrap">
-                                        {r.period}
+                                )}
+                                <div
+                                  className={`rounded-2xl px-5 py-4 border-l-4 border border-r border-t border-b transition-all duration-300
+                                    group-hover:shadow-md group-hover:-translate-y-0.5
+                                    ${r.current
+                                      ? 'bg-white border-l-[#E63B2E] border-r-[#E63B2E]/10 border-t-[#E63B2E]/10 border-b-[#E63B2E]/10'
+                                      : 'bg-[#F5F3EE] border-l-[#111111]/20 border-r-[#111111]/8 border-t-[#111111]/8 border-b-[#111111]/8'
+                                    }`}
+                                >
+                                  <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
+                                    <div className="flex flex-wrap items-center gap-2">
+                                      <h3 className="font-sans font-bold text-sm text-[#111111]">{r.role}</h3>
+                                      {r.current && (
+                                        <span className="font-mono text-[10px] bg-[#E63B2E] text-[#F5F3EE] px-2 py-0.5 rounded-full leading-none">
+                                          Current
+                                        </span>
+                                      )}
+                                      {ri === 0 && !r.current && (
+                                        <span className="font-mono text-[10px] bg-[#E8E4DD] text-[#111111]/50 px-2 py-0.5 rounded-full leading-none">
+                                          Promoted
+                                        </span>
+                                      )}
+                                    </div>
+                                    <span className="font-mono text-xs text-[#111111]/40 whitespace-nowrap">
+                                      {r.period}
+                                    </span>
+                                  </div>
+                                  <p className="font-sans text-xs text-[#111111]/60 leading-relaxed mb-3">{r.desc}</p>
+                                  {r.achievements && (
+                                    <div className="flex items-center gap-2 pt-3 border-t border-[#E63B2E]/15">
+                                      <span className="text-sm">🏆</span>
+                                      <span className="font-mono text-[10px] font-bold text-[#E63B2E] tracking-wide uppercase">
+                                        {r.achievements[0]}
+                                      </span>
+                                      <span className="font-mono text-[10px] text-[#111111]/40">
+                                        {r.achievements[1]}
                                       </span>
                                     </div>
-                                    <p className="font-sans text-xs text-[#111111]/60 leading-relaxed mb-3">{r.desc}</p>
-                                    {r.achievements && (
-                                      <div className="flex items-center gap-2 pt-3 border-t border-[#E63B2E]/15">
-                                        <span className="text-sm">🏆</span>
-                                        <span className="font-mono text-[10px] font-bold text-[#E63B2E] tracking-wide uppercase">
-                                          {r.achievements[0]}
-                                        </span>
-                                        <span className="font-mono text-[10px] text-[#111111]/40">
-                                          {r.achievements[1]}
-                                        </span>
-                                      </div>
-                                    )}
-                                  </div>
+                                  )}
                                 </div>
-                              ))}
-                            </div>
+                              </div>
+                            ))}
                           </div>
                         ) : (
                           /* ── Single role card ── */
