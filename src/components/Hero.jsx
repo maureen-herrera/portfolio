@@ -38,16 +38,19 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl">
-        <p className="hero-item font-mono text-xs text-[#E63B2E] tracking-[0.3em] uppercase mb-4">
-          Underwriting &amp; Financial Operations
-        </p>
+        <div className="hero-item inline-flex items-center gap-2 bg-[#F5F3EE]/10 backdrop-blur-md border border-[#F5F3EE]/20 rounded-full px-4 py-2 mb-6">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#E63B2E] flex-shrink-0" />
+          <span className="font-mono text-xs text-[#F5F3EE] tracking-[0.2em] uppercase">
+            Underwriting &amp; Financial Operations
+          </span>
+        </div>
 
         <h1 className="leading-none mb-6">
           <span className="hero-item block font-sans font-bold text-[#F5F3EE] text-4xl md:text-6xl lg:text-7xl tracking-tight">
-            Command the
+            No detail
           </span>
           <span className="hero-item block font-serif italic text-[#F5F3EE] text-[4rem] md:text-[8rem] lg:text-[11rem] leading-none -mt-2">
-            Details.
+            Overlooked.
           </span>
         </h1>
 
