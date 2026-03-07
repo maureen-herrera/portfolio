@@ -50,7 +50,7 @@ export default function Hero() {
         <div className="hero-item inline-flex items-center gap-2 bg-[#F5F3EE]/10 backdrop-blur-md border border-[#F5F3EE]/20 rounded-full px-4 py-2 mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-[#E63B2E] flex-shrink-0" />
           <span className="font-mono text-xs text-[#F5F3EE] tracking-[0.2em] uppercase">
-            Underwriting &amp; Financial Operations
+            Financial Operations
           </span>
         </div>
 
