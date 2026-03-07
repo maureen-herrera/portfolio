@@ -1,12 +1,14 @@
+import { lazy, Suspense } from 'react'
 import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Features from './components/Features'
-import Philosophy from './components/Philosophy'
-import Protocol from './components/Protocol'
-import ExperienceSection from './components/Experience'
-import CTA from './components/CTA'
-import Footer from './components/Footer'
+
+const Features = lazy(() => import('./components/Features'))
+const Philosophy = lazy(() => import('./components/Philosophy'))
+const Protocol = lazy(() => import('./components/Protocol'))
+const ExperienceSection = lazy(() => import('./components/Experience'))
+const CTA = lazy(() => import('./components/CTA'))
+const Footer = lazy(() => import('./components/Footer'))
 
 export default function App() {
   return (
@@ -14,13 +16,17 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Features />
-        <Philosophy />
-        <Protocol />
-        <ExperienceSection />
-        <CTA />
+        <Suspense fallback={null}>
+          <Features />
+          <Philosophy />
+          <Protocol />
+          <ExperienceSection />
+          <CTA />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </>
   )
 }
