@@ -17,6 +17,11 @@ body::before {
 
 html { scroll-behavior: smooth; }
 
+@keyframes slideWordDown {
+  from { transform: translateY(-60%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {

@@ -1,9 +1,19 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ArrowDownRight } from 'lucide-react'
 
+const rotatingWords = ['application', 'document', 'risk signal', 'identity', 'transaction', 'red flag']
+
 export default function Hero() {
   const containerRef = useRef(null)
+  const [wordIndex, setWordIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex(i => (i + 1) % rotatingWords.length)
+    }, 2200)
+    return () => clearInterval(interval)
+  }, [])
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -47,7 +57,14 @@ export default function Hero() {
 
         <h1 className="leading-none mb-6">
           <span className="hero-item block font-sans font-bold text-[#F5F3EE] text-4xl md:text-6xl lg:text-7xl tracking-tight">
-            No detail
+            No{' '}
+            <span
+              key={wordIndex}
+              className="inline-block text-[#E63B2E]"
+              style={{ animation: 'slideWordDown 0.35s cubic-bezier(0.22,1,0.36,1) both' }}
+            >
+              {rotatingWords[wordIndex]}
+            </span>
           </span>
           <span className="hero-item block font-serif italic text-[#F5F3EE] text-[4rem] md:text-[8rem] lg:text-[11rem] leading-none -mt-2">
             Overlooked.

@@ -42,12 +42,12 @@ export default function Philosophy() {
       ref={sectionRef}
       className="relative py-32 md:py-48 px-6 md:px-16 bg-[#111111] overflow-hidden"
     >
-      {/* Background texture */}
+      {/* Background texture — document signing photo */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-10"
         style={{
           backgroundImage:
-            'url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80")',
+            'url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80")',
         }}
       />
 
