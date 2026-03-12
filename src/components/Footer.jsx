@@ -50,7 +50,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/maureen-kris-herrera-773935256/"
+                  href="https://www.linkedin.com/in/maureen-kris-herrera/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover-lift flex items-center gap-2 font-sans text-sm text-[#F5F3EE]/60 hover:text-[#F5F3EE] no-underline transition-colors"
