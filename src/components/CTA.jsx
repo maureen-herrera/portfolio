@@ -54,7 +54,7 @@ export default function CTA() {
             <ArrowUpRight size={16} className="relative z-10" />
           </a>
           <a
-            href="https://www.linkedin.com/in/maureen-kris-herrera-773935256/"
+            href="https://www.linkedin.com/in/maureen-kris-herrera/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-magnetic inline-flex items-center gap-3 bg-[#111111] text-[#F5F3EE] font-semibold px-8 py-4 rounded-full no-underline w-full sm:w-auto justify-center"
