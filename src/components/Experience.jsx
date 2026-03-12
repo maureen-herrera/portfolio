@@ -8,6 +8,17 @@ gsap.registerPlugin(ScrollTrigger)
 // Jobs where `roles` = multiple positions at same company (LinkedIn-style tree)
 const JOBS = [
   {
+    company: 'Mindrift',
+    roles: [
+      {
+        role: 'AI Data Support / AI Data Annotator',
+        period: 'Jan 2025 — Present',
+        desc: 'Reviewed and labeled datasets to support the training of AI and machine learning models. Maintained high data accuracy and consistency through rigorous analysis and quality checks, while partnering with team members to uphold project standards and deliver on time.',
+        current: true,
+      },
+    ],
+  },
+  {
     company: 'Spring Financial',
     roles: [
       {
